@@ -68,9 +68,10 @@ class OnlineSalesRegisterCollector:
 
     @staticmethod
     def get_telephone_number(telephone_number):
-        if not(telephone_number.isdigit()):
+        tel_num_str = str(telephone_number)
+        if not tel_num_str.isdigit():
             raise ValueError('Необходимо ввести цифры')
-        elif len(telephone_number) > 10:
+        elif len(tel_num_str) > 10:
             raise ValueError('Необходимо ввести 10 цифр после "+7"')
         else:
-            return f'+7{telephone_number}'
+            return f'+7{tel_num_str}'
